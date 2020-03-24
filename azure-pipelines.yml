@@ -19,8 +19,9 @@ steps:
   inputs:
     serviceConnectionEndpoint: 'Az-Sample'
     testType: 'app'
+    targetFile: 'package.json'
     monitorOnBuild: true
-    failOnIssues: true
+    failOnIssues: false
     projectName: 'Sample'
 
 - script: |

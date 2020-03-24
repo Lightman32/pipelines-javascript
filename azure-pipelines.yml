@@ -15,6 +15,12 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
+- script: |
+    npm install
+    npm run build
+  displayName: 'npm install and build'
+
+
 - task: SnykSecurityScan@0
   inputs:
     serviceConnectionEndpoint: 'Az-Sample'
@@ -23,8 +29,3 @@ steps:
     monitorOnBuild: true
     failOnIssues: false
     projectName: 'Sample'
-
-- script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
